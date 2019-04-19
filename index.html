@@ -54,9 +54,7 @@
                     end += heartCharacters[(i + rotation) % 6];
                 }
 
-                // if(end.length === 0) {
-                //     end += "\u{00a0}";
-                // }
+                end = end.normalize();
 
                 document.title = end;
                 hearts.html(end);
