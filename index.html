@@ -45,6 +45,7 @@
         <script src="jquery.js"></script>
         <script>
             let rotation = 0;
+            const length = 6;
             const hearts = $(".hearts");
             // Orange: "\u{1f9e1}",
             const heartCharacters = ["\u{2764}\u{fe0f}", "\u{1f49b}", "\u{1f49a}", "\u{1f499}", "\u{1f49c}"];
@@ -52,7 +53,7 @@
             setInterval(function () {
                 let end = "";
 
-                for (let i = 0; i < 6; i++) {
+                for (let i = 0; i < length; i++) {
                     end += heartCharacters[(i + rotation) % heartCharacters.length];
                 }
 
@@ -62,6 +63,9 @@
                 hearts.html(end);
 
                 rotation++;
+                if(rotation > length) {
+                    rotation -= length-1;
+                }
             }, 100);
         </script>
     </body>
